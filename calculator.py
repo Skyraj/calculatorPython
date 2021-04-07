@@ -2,6 +2,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("Calculator")
+root.resizable(False, False)
 
 output = tk.Entry(root, width=60, bd=5)
 output.grid(row=0, columnspan=4)
@@ -36,22 +37,22 @@ def buttonClick_equal():
 
     if "+" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) + int(expression[2]))
+        output.insert(0, float(expression[0]) + float(expression[2]))
     elif "-" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) - int(expression[2]))
+        output.insert(0, float(expression[0]) - float(expression[2]))
     elif "*" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) * int(expression[2]))
+        output.insert(0, float(expression[0]) * float(expression[2]))
     elif "/" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) / int(expression[2]))
+        output.insert(0, float(expression[0]) / float(expression[2]))
     elif "%" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) % int(expression[2]))
+        output.insert(0, float(expression[0]) % float(expression[2]))
     elif "**" in expression:
         output.delete(0, "end")
-        output.insert(0, int(expression[0]) ** int(expression[2]))
+        output.insert(0, float(expression[0]) ** float(expression[2]))
 
 
 button_9 = tk.Button(root, text="9", padx=40, pady=40, command=lambda: buttonClick(9))
