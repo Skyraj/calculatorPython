@@ -4,7 +4,7 @@ root = tk.Tk()
 root.title("Calculator")
 root.resizable(False, False)
 
-output = tk.Entry(root, width=24, font=("None", 20), bd=5, justify="right")
+output = tk.Entry(root, width=23, font=("None", 20), bd=5, justify="right")
 output.grid(row=0, columnspan=4)
 
 expression = "" # works but should avoid global variable use
@@ -22,7 +22,7 @@ def buttonClick_root():
     global expression
     expression = output.get()
     output.delete(0, "end")
-    output.insert(0, int(expression) ** 0.5)
+    output.insert(0, float(expression) ** 0.5)
 
 def buttonClick_operation(oper):
     global expression
@@ -55,27 +55,27 @@ def buttonClick_equal():
         output.insert(0, float(expression[0]) ** float(expression[2]))
 
 
-button_9 = tk.Button(root, text="9", width=12, height=5, command=lambda: buttonClick(9))
-button_8 = tk.Button(root, text="8", width=12, height=5, command=lambda: buttonClick(8))
-button_7 = tk.Button(root, text="7", width=12, height=5, command=lambda: buttonClick(7))
-button_6 = tk.Button(root, text="6", width=12, height=5, command=lambda: buttonClick(6))
-button_5 = tk.Button(root, text="5", width=12, height=5, command=lambda: buttonClick(5))
-button_4 = tk.Button(root, text="4", width=12, height=5, command=lambda: buttonClick(4))
-button_3 = tk.Button(root, text="3", width=12, height=5, command=lambda: buttonClick(3))
-button_2 = tk.Button(root, text="2", width=12, height=5, command=lambda: buttonClick(2))
-button_1 = tk.Button(root, text="1", width=12, height=5, command=lambda: buttonClick(1))
-button_0 = tk.Button(root, text="0", width=12, height=5, command=lambda: buttonClick(0))
+button_9 = tk.Button(root, text="9", width=5, height=2, font=("None", 20), command=lambda: buttonClick(9))
+button_8 = tk.Button(root, text="8", width=5, height=2, font=("None", 20), command=lambda: buttonClick(8))
+button_7 = tk.Button(root, text="7", width=5, height=2, font=("None", 20), command=lambda: buttonClick(7))
+button_6 = tk.Button(root, text="6", width=5, height=2, font=("None", 20), command=lambda: buttonClick(6))
+button_5 = tk.Button(root, text="5", width=5, height=2, font=("None", 20), command=lambda: buttonClick(5))
+button_4 = tk.Button(root, text="4", width=5, height=2, font=("None", 20), command=lambda: buttonClick(4))
+button_3 = tk.Button(root, text="3", width=5, height=2, font=("None", 20), command=lambda: buttonClick(3))
+button_2 = tk.Button(root, text="2", width=5, height=2, font=("None", 20), command=lambda: buttonClick(2))
+button_1 = tk.Button(root, text="1", width=5, height=2, font=("None", 20), command=lambda: buttonClick(1))
+button_0 = tk.Button(root, text="0", width=5, height=2, font=("None", 20), command=lambda: buttonClick(0))
 
-button_clear = tk.Button(root, text="AC", width=12, height=5, command=lambda: buttonClick_clear())
-button_exp = tk.Button(root, text="x**y", width=12, height=5, command=lambda: buttonClick_operation(" ** "))
-button_root = tk.Button(root, text="x**1/2", width=12, height=5, command=lambda: buttonClick_root())
-button_mod = tk.Button(root, text="%", width=12, height=5, command=lambda: buttonClick_operation(" % "))
-button_neg = tk.Button(root, text="(-)", width=12, height=5, command=lambda: buttonClick_neg())
-button_equal = tk.Button(root, text="=", width=12, height=5, command=lambda: buttonClick_equal())
-button_plus = tk.Button(root, text="+", width=12, height=5, command=lambda: buttonClick_operation(" + "))
-button_minus = tk.Button(root, text="-", width=12, height=5, command=lambda: buttonClick_operation(" - "))
-button_multiply = tk.Button(root, text="*", width=12, height=5, command=lambda: buttonClick_operation(" * "))
-button_divide = tk.Button(root, text="/", width=12, height=5, command=lambda: buttonClick_operation(" / "))
+button_clear = tk.Button(root, text="AC", width=5, height=2, font=("None", 20), command=lambda: buttonClick_clear())
+button_exp = tk.Button(root, text="x**y", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" ** "))
+button_root = tk.Button(root, text="\u221A", width=5, height=2, font=("None", 20), command=lambda: buttonClick_root())
+button_mod = tk.Button(root, text="%", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" % "))
+button_neg = tk.Button(root, text="(-)", width=5, height=2, font=("None", 20), command=lambda: buttonClick_neg())
+button_equal = tk.Button(root, text="=", width=5, height=2, font=("None", 20), command=lambda: buttonClick_equal())
+button_plus = tk.Button(root, text="+", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" + "))
+button_minus = tk.Button(root, text="-", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" - "))
+button_multiply = tk.Button(root, text="x", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" * "))
+button_divide = tk.Button(root, text="/", width=5, height=2, font=("None", 20), command=lambda: buttonClick_operation(" / "))
 
 button_9.grid(row=2, column=0)
 button_8.grid(row=2, column=1)
