@@ -1,2 +1,2 @@
 # calculator_guiPython
-Simple Calculator made with Python
+Simple GUI Calculator made with the tkinter Python library
